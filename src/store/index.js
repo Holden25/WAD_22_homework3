@@ -35,7 +35,7 @@ export default createStore({
       "id": 5,
       "date": "Oct 22, 2022",
       "body": "Shes a cutie isnt she :)?",
-      "picture": "@/assets/postitus_3.jpg"
+      "picture": "@/assets/postitus_5.jpg"
   },
   {
       "userId": 1,

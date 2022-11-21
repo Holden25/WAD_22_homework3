@@ -1,11 +1,8 @@
 <template>
-    <div>This is a header</div>
-
-
     <nav>
         <div id="navigation">
-            <a href="index.html">Home</a>
-            <a href="addPost.html">add Post</a>
+            <router-link to="/">Home</router-link>
+            <router-link to="/signupview">signup</router-link>
         </div>
 
 
