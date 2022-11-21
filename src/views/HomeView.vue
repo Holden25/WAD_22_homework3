@@ -10,6 +10,27 @@
     </aside>
 
     <main> <!--this is where all the posts go-->
+
+
+      <!--trying to make posts dynamically-->
+        <article class = "post" v-for="post in postList" :key="post.id">
+
+          <div class = "post_header">
+                <img class = "icon" src="@/assets/me.png" alt="profiil">
+                <p> {{post.date}}</p>
+          </div>
+
+            <img v-if="post.picture" style="max-width: 60% ;" src={{post.picture}} alt="pilt">
+            <p> {{post.body}}</p>
+            <img class  = "icon" src="@/assets/like_button.jpg" alt="like button">
+
+        </article>
+
+
+
+
+
+
         <article class="post">
 
             <div class = "post_header">
@@ -87,6 +108,113 @@
 export default {
   name: 'HomeView',
   components: {
+  },
+
+  computed: {
+    postList(){
+      return this.$store.state.posts
+    }
   }
 }
 </script>
+
+
+<style>
+
+
+/* whole page */
+#flex_container{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+/* the middle section */
+#main_section{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    flex: 4;
+    margin: 1em 0.5em;
+}
+
+footer {
+    padding: 2em;
+    border: 0.2em outset rgb(43, 41, 41);
+    /*color: red;- */
+    background-color: darkgray;
+    /* position: sticky; 
+    bottom: 0; */
+}
+
+nav {
+    /*color: blue; */
+    border: 0.2em outset rgb(43, 41, 41) ;
+    width: 100%;
+    /*position: fixed; 
+    top: 0;*/
+
+    background-color: darkgray;
+
+    /* flex settings*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sidebar {
+    padding: 1em;
+    border: 0.2em solid rgb(43, 41, 41);
+    border-radius: 5px;
+    background-color: darkgrey;
+    flex: 1;
+}
+
+.icon {
+    border-radius: 50%;
+    max-width: 5%;
+    height: auto;
+    margin: 0.2em 0.2em;
+}
+
+
+main article {
+    border: 0.2em solid rgb(43, 41, 41);
+    margin: 0.5em 0.1em;
+}
+
+.post_header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5em 0.5em;
+    min-height: fit-content;
+}
+
+
+main {
+    padding: 3%;
+    margin: 0.5em 1em;
+    border: 1em solid rgb(43, 41, 41);
+    flex: 3;
+    overflow: auto;
+    height: 80vh;
+}
+
+div + img{
+    margin: auto;
+    display: block;
+}
+
+
+div ~ p{
+    color: rgb(43, 41, 41);
+}
+
+div > p{
+    color:darkblue;
+}
+
+
+
+</style>

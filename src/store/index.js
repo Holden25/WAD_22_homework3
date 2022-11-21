@@ -7,14 +7,14 @@ export default createStore({
       "id": 1,
       "date": "Oct 22, 2022",
       "body": "Making something cool out of my food, how do you like it?",
-      "picture": "@/src/assets/postitus_1.jpg"
+      "picture": "@/assets/postitus_1.jpg"
   },
   {
       "userId": 1,
       "id": 2,
       "date": "Oct 22, 2022",
       "body": "Everythong becomes much clearer when you bring it into focus dont you think?",
-      "picture": "@src/assets/postitus_2.jpg"
+      "picture": "@/assets/postitus_2.jpg"
   },
   {
       "userId": 1,
@@ -35,7 +35,7 @@ export default createStore({
       "id": 5,
       "date": "Oct 22, 2022",
       "body": "Shes a cutie isnt she :)?",
-      "picture": "@/src/assets/postitus_3.jpg"
+      "picture": "@/assets/postitus_3.jpg"
   },
   {
       "userId": 1,
