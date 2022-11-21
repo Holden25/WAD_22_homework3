@@ -1,8 +1,10 @@
 <template>
 
-  <div id="flex_container">
 
 
+<div id="flex_container">
+
+<Header/>
 
 <div id = "main_section">
     <aside class = "sidebar">
@@ -20,7 +22,9 @@
                 <p> {{post.date}}</p>
           </div>
 
-            <img v-if="post.picture" style="max-width: 60% ;" src={{post.picture}} alt="pilt">
+
+            <img v-if="post.picture" style="max-width: 60% ;" v-bind:src="post.picture" alt="pilt">
+            <span>{{post.picture}}</span>
             <p> {{post.body}}</p>
             <img class  = "icon" src="@/assets/like_button.jpg" alt="like button">
 
@@ -34,7 +38,7 @@
         <article class="post">
 
             <div class = "post_header">
-                <img class = "icon" src="res/images/me.png" alt="profiil">
+                <img class = "icon" src="@/assets/postitus_1.jpg" alt="profiil">
                 <p> Oct 22, 2022</p>
 
             </div>
@@ -105,9 +109,17 @@
 
 <script>
 
+import Footer from "@/components/Footer.vue";
+import Header from "@/components/Header.vue";
+
 export default {
+
+
+
+
   name: 'HomeView',
   components: {
+    Header, Footer
   },
 
   computed: {
