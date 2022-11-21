@@ -4,6 +4,7 @@
 
 <div id="flex_container">
 
+
 <Header/>
 
 <div id = "main_section">
@@ -14,7 +15,15 @@
     <main> <!--this is where all the posts go-->
 
 
-      <!--trying to make posts dynamically-->
+
+        <!--trying to make posts dynamically using post compo-->
+
+        <Post class = "post"  v-for="post in postList" :key="post.id" :passedpost=post />
+
+
+        
+
+      <!--trying to make posts dynamically, not using compo (in the end in homework we have to use comp)-->
         <article class = "post" v-for="post in postList" :key="post.id">
 
           <div class = "post_header">
@@ -22,7 +31,7 @@
                 <p> {{post.date}}</p>
           </div>
 
-
+            <!--images are not loading for some reason didnt find fix yet-->
             <img v-if="post.picture" style="max-width: 60% ;" v-bind:src="post.picture" alt="pilt">
             <span>{{post.picture}}</span>
             <p> {{post.body}}</p>
@@ -35,10 +44,11 @@
 
 
 
+        <!--these are static post, can be deleted in the end.-->
         <article class="post">
 
             <div class = "post_header">
-                <img class = "icon" src="@/assets/postitus_1.jpg" alt="profiil">
+                <img class = "icon" src="@/assets/me.png" alt="profiil">
                 <p> Oct 22, 2022</p>
 
             </div>
@@ -100,9 +110,7 @@
     </aside>
 </div>
 
-<footer>
-    footer
-</footer>
+<Footer/>
 
 </div>
 </template>
@@ -111,6 +119,7 @@
 
 import Footer from "@/components/Footer.vue";
 import Header from "@/components/Header.vue";
+import Post from "@/components/Post.vue";
 
 export default {
 
@@ -119,7 +128,7 @@ export default {
 
   name: 'HomeView',
   components: {
-    Header, Footer
+    Header, Footer, Post
   },
 
   computed: {
