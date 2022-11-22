@@ -9,7 +9,7 @@
             <input type="email" v-model="email" required>
             <div v-if="passwordError" class="error">{{passwordError}} </div>
             <div v-if="passwordError2" class="error">{{passwordError2}} </div>
-            <div v-if="passwordError3" class="error">{{passwordError3}} </div>
+            
             <div v-if="passwordError4" class="error">{{passwordError4}} </div>
             <div v-if="passwordError5" class="error">{{passwordError5}} </div>
             <div v-if="passwordError6" class="error">{{passwordError6}} </div>
@@ -23,8 +23,6 @@
             </div>
             
     </form>
-
-    <p> Password: {{ password }} </p>
 
     <Footer/>
 
@@ -59,8 +57,8 @@ methods: {
             '' : 'Password should be less than 15 characters!';
 
             //Includes at least two lowercase alphabet characters
-            this.passwordError3 = this.password.matches("[a-z]+.*[a-z]+") ?
-            '' : 'Password should include at least two lowercase alphabet characters!';
+            //this.passwordError3 = this.password.matches("".*[a-z].*[a-z].*"") ?
+            //'' : 'Password should include at least two lowercase alphabet characters!';
 
             //Includes at least one uppercase alphabet character
             this.passwordError4 = /[A-Z]/.test(this.password) ?
