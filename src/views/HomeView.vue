@@ -157,27 +157,13 @@ export default {
     flex-flow: row nowrap;
     justify-content: space-evenly;
     flex: 4;
-    margin: 1em 0.5em;
-}
-
-footer {
-    padding: 2em;
-    border: 0.2em outset rgb(43, 41, 41);
-    /*color: red;- */
-    background-color: darkgray;
-    /* position: sticky; 
-    bottom: 0; */
+    margin: 1em 0em;
 }
 
 nav {
-    /*color: blue; */
-    border: 0.2em outset rgb(43, 41, 41) ;
     width: 100%;
-    /*position: fixed; 
-    top: 0;*/
-
+    border-radius: 5px;
     background-color: darkgray;
-
     /* flex settings*/
     display: flex;
     flex-direction: row;
@@ -185,8 +171,6 @@ nav {
 }
 
 .sidebar {
-    padding: 1em;
-    border: 0.2em solid rgb(43, 41, 41);
     border-radius: 5px;
     background-color: darkgrey;
     flex: 1;
@@ -201,7 +185,8 @@ nav {
 
 
 main article {
-    border: 0.2em solid rgb(43, 41, 41);
+    border: 0.2em solid black;
+    border-radius: 5px;
     margin: 0.5em 0.1em;
 }
 
@@ -215,8 +200,9 @@ main article {
 
 main {
     padding: 3%;
-    margin: 0.5em 1em;
-    border: 1em solid rgb(43, 41, 41);
+    margin: 0em 1em;
+    background: darkgray;
+    border-radius: 5px;
     flex: 3;
     overflow: auto;
     height: 80vh;

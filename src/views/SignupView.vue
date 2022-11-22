@@ -26,17 +26,20 @@
 
     <p> Password: {{ password }} </p>
 
-</div>
+    <Footer/>
 
+</div>
 </template>
 
 <script>
+ import Footer from "@/components/Footer.vue";
  import Header from "@/components/Header.vue";
+
 
 export default {
     name : "SignupView",
 
-    components: {Header},
+    components: {Header, Footer},
 
     data() {
         return {
@@ -87,3 +90,14 @@ methods: {
 
 
 </script>
+
+<style>
+    #main_section{
+        height: auto;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        flex: 4;
+        margin: 1em 0em;
+    }
+</style>
