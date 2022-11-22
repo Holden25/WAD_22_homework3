@@ -18,7 +18,7 @@
 
         <!--trying to make posts dynamically using post compo-->
 
-        <Post class = "post"  v-for="post in postList" :key="post.id" :passedpost=post />
+        <Post class = "post"  v-for="post in postList" :key="post.id" :passedpost=post v-model="" />
 
 
         
@@ -32,7 +32,7 @@
           </div>
 
             <!--images are not loading for some reason didnt find fix yet-->
-            <img v-if="post.picture" style="max-width: 60% ;" v-bind:src="post.picture" alt="pilt">
+            <img v-if="post.picture" style="max-width: 60% ;" v-bind:src=post.picture alt="pilt">
             <span>{{post.picture}}</span>
             <p> {{post.body}}</p>
             <img class  = "icon" src="@/assets/like_button.jpg" alt="like button">
@@ -45,6 +45,10 @@
         <!--boxis on the sides-->
     </aside>
 </div>
+
+<!--reset likes button-->
+<button @click="resetCount">Reset likes</button>
+
 
 <Footer/>
 
@@ -67,10 +71,24 @@ export default {
     Header, Footer, Post
   },
 
+  data: function() {
+    return{
+
+
+    }
+
+  },
+
   computed: {
     postList(){
       return this.$store.state.posts
     }
+  },
+
+  methods: {
+    resetCount: function() {
+                window.location.reload()
+            }
   }
 }
 </script>
